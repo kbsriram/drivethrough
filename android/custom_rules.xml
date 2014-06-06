@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <target name="-pre-build">
+    <ant
+        antfile="${basedir}/../common/build.xml"
+        dir="${basedir}/../common"
+        target="dist"
+        inheritAll="false"/>
+    <mkdir dir="${basedir}/../android/libs"/>
+    <copy todir="${basedir}/../android/libs">
+      <fileset dir="${basedir}/../common/dist"/>
+      <fileset dir="${basedir}/../common/lib">
+        <exclude name="android*"/>
+      </fileset>
+    </copy>
+  </target>
+
+  <target name="qclean">
+    <delete dir="gen" verbose="${verbose}" />
+    <delete dir="bin/classes" verbose="${verbose}" />
+  </target>
+
+</project>

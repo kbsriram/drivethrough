@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:dt="http://schemas.android.com/apk/res/com.kbsriram.drivethrough.android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+  <TextView
+      android:id="@+id/main_status"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:gravity="center"
+      android:text="Starting up..."
+      android:textSize="24sp"
+      />
+  <com.kbsriram.drivethrough.android.view.CMaximumWidthLayout
+      dt:maximumChildWidth="@dimen/grid_m_12"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:paddingLeft="@dimen/grid_b_3"
+      android:paddingRight="@dimen/grid_b_3">
+    <ScrollView
+        android:id="@+id/main_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:orientation="vertical">
+
+        <com.kbsriram.drivethrough.android.view.CModularLayout
+            android:id="@+id/main_counters"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/grid_b_3"
+            dt:horizontalSpacing="@dimen/grid_b_6"
+            dt:verticalSpacing="@dimen/grid_b_6"
+            dt:moduleWidth="@dimen/grid_m_2"
+            dt:moduleHeight="@dimen/grid_m_2"
+            dt:dividerEnabled="true">
+
+          <com.kbsriram.drivethrough.android.view.CStatusCounterView
+              android:id="@+id/main_counter_uploaded"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              dt:activeColor="@color/green_accent"
+              dt:captionText="@string/counter_saved"/>
+          <com.kbsriram.drivethrough.android.view.CStatusCounterView
+              android:id="@+id/main_counter_pending"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              dt:activeColor="@color/red_accent"
+              dt:captionText="@string/counter_pending"/>
+        </com.kbsriram.drivethrough.android.view.CModularLayout>
+
+        <TextView
+            android:id="@+id/main_pendings_title"
+            android:text="@string/recently_pending"
+            android:textStyle="bold"
+            android:textSize="@dimen/text_size_small"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/grid_b_3"/>
+
+        <include
+            android:id="@+id/main_pendings"
+            layout="@layout/tnlayout"/>
+
+        <TextView
+            android:id="@+id/main_recents_title"
+            android:text="@string/recently_saved"
+            android:textStyle="bold"
+            android:textSize="@dimen/text_size_small"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/grid_b_3"/>
+
+        <include
+            android:id="@+id/main_recents"
+            layout="@layout/tnlayout"/>
+
+        <Button
+            android:id="@+id/main_refresh"
+            style="@style/FlatButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sync!"
+            android:layout_gravity="left"
+            android:layout_marginTop="@dimen/grid_b_3"
+            android:paddingLeft="@dimen/grid_b_2_3"
+            android:paddingRight="@dimen/grid_b_2_3"/>
+
+        <TextView
+            android:id="@+id/main_content_status"
+            android:textColor="@color/blue_dark_accent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/grid_b_3"
+            android:layout_marginBottom="@dimen/grid_b_3"
+            />
+
+      </LinearLayout>
+    </ScrollView>
+  </com.kbsriram.drivethrough.android.view.CMaximumWidthLayout>
+</FrameLayout>

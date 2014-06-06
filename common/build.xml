@@ -1,0 +1,28 @@
+<project name="common" default="dist">
+
+  <target name="init">
+    <mkdir dir="classes"/>
+  </target>
+
+  <target name="clean">
+    <delete dir="classes"/>
+    <delete dir="dist"/>
+  </target>
+
+  <target name="compile" depends="init">
+    <javac srcdir="src" destdir="classes" includeantruntime="false" debug="on">
+      <compilerarg value="-Xlint:all"/>
+      <classpath>
+        <fileset dir="lib">
+          <include name="*.jar"/>
+        </fileset>
+      </classpath>
+    </javac>
+  </target>
+
+  <target name="dist" depends="compile">
+    <zip destfile="dist/common.jar"
+         basedir="classes"/>
+  </target>
+
+</project>

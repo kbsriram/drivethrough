@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="app_name">Drivethrough</string>
+
+  <!-- wifi dialog -->
+  <string name="no_wifi_title">Wifi Unavailable</string>
+  <string name="wifi_settings">Open Wifi Settings</string>
+  <string name="no_wifi_message">
+    This operation runs only when wifi is available. Please enable wifi to continue.
+  </string>
+  <string name="counter_saved">uploaded</string>
+  <string name="counter_pending">pending</string>
+  <string name="recently_saved">Recently uploaded</string>
+  <string name="recently_pending">Queued for upload</string>
+</resources>

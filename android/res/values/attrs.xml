@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <declare-styleable name="CMaximumWidthLayout">
+    <attr name="maximumChildWidth" format="dimension" />
+    <attr name="childGravity">
+      <enum name="center" value="0"/>
+      <enum name="left" value="1"/>
+      <enum name="right" value="2"/>
+    </attr>
+  </declare-styleable>
+  <declare-styleable name="CStatusCounterView">
+    <attr name="activeColor" format="color"/>
+    <attr name="captionText" format="string"/>
+  </declare-styleable>
+  <declare-styleable name="CModularLayout">
+    <attr name="horizontalSpacing" format="dimension" />
+    <attr name="verticalSpacing" format="dimension" />
+    <attr name="moduleWidth" format="dimension" />
+    <attr name="moduleHeight" format="dimension" />
+    <attr name="dividerEnabled" format="boolean" />
+  </declare-styleable>
+</resources>

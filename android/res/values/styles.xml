@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <style name="ThemeLightNoTitleBar" parent="android:Theme.Holo.Light">
+    <item name="android:windowActionBar">false</item>
+    <item name="android:windowNoTitle">true</item>
+  </style>
+  <style name="FlatButton">
+    <item name="android:background">@drawable/flat_button_background</item>
+    <item name="android:textColor">@color/flat_text</item>
+    <item name="android:textSize">@dimen/text_size_large</item>
+    <item name="android:layout_height">@dimen/grid</item>
+    <item name="android:layout_width">wrap_content</item>
+    <item name="android:gravity">center</item>
+  </style>
+</resources>

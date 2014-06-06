@@ -1,0 +1,9 @@
+*~
+common/classes/
+common/dist/
+laptop/classes/
+laptop/lib/
+android/bin/
+android/gen/
+android/google-play-services_lib/bin/
+android/google-play-services_lib/gen/

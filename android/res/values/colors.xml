@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <color name="divider_color">#ffc0c0c0</color>
+  <color name="blue_dark_accent">#ff0099cc</color>
+  <color name="blue_dark_accent_translucent">#800099cc</color>
+  <color name="red_accent">#ffa92121</color>
+  <color name="green_accent">#ff005b00</color>
+  <color name="dark">#ff333333</color>
+  <color name="gray">#ff808080</color>
+  <color name="light_gray">#ffc0c0c0</color>
+</resources>

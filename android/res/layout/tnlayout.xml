@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.kbsriram.drivethrough.android.view.CModularLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:dt="http://schemas.android.com/apk/res/com.kbsriram.drivethrough.android"
+    android:id="@+id/tnlayout_container"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    dt:horizontalSpacing="@dimen/grid_b_12"
+    dt:verticalSpacing="@dimen/grid_b_12"
+    dt:moduleWidth="@dimen/grid_m_2"
+    dt:moduleHeight="@dimen/grid_m_2">
+  <com.kbsriram.drivethrough.android.view.CRoundedBitmapView
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"/>
+  <com.kbsriram.drivethrough.android.view.CRoundedBitmapView
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"/>
+  <com.kbsriram.drivethrough.android.view.CRoundedBitmapView
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"/>
+  <com.kbsriram.drivethrough.android.view.CRoundedBitmapView
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"/>
+  <com.kbsriram.drivethrough.android.view.CRoundedBitmapView
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"/>
+  <com.kbsriram.drivethrough.android.view.CRoundedBitmapView
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"/>
+</com.kbsriram.drivethrough.android.view.CModularLayout>

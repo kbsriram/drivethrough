@@ -1,0 +1,64 @@
+<project name="laptop" default="compile">
+
+  <target name="init">
+    <mkdir dir="classes"/>
+    <mkdir dir="lib"/>
+    <mkdir dir="dist"/>
+  </target>
+
+  <target name="clean">
+    <delete dir="classes"/>
+    <delete dir="dist"/>
+  </target>
+
+  <target name="veryclean" depends="clean">
+    <delete dir="lib"/>
+    <ant dir="../common" target="clean"/>
+  </target>
+
+  <target name="common" depends="init">
+    <ant dir="../common" target="dist"/>
+    <copy todir="lib">
+      <fileset dir="../common/dist"/>
+      <fileset dir="../common/lib"/>
+    </copy>
+  </target>
+
+  <target name="compile" depends="common">
+    <javac srcdir="src" destdir="classes" includeantruntime="false" debug="on">
+      <compilerarg value="-Xlint:all"/>
+      <classpath>
+        <fileset dir="lib">
+          <include name="*.jar"/>
+        </fileset>
+      </classpath>
+    </javac>
+  </target>
+
+  <target name="dist" depends="compile">
+    <jar destfile="dist/drivethrough.jar">
+      <fileset dir="classes"/>
+      <zipfileset
+          includes="**/*.class"
+          src="lib/android-json.jar"/>
+      <zipfileset
+          includes="**/*.class"
+          src="lib/common.jar"/>
+      <zipfileset
+          includes="**/*.class"
+          src="lib/android-json.jar"/>
+      <zipfileset
+          includes="**/*.class"
+          src="lib/bcpg-jdk15on-148b12.jar"/>
+      <zipfileset
+          includes="**/*.class"
+          src="lib/bcprov-jdk15on-148b12.jar"/>
+      <manifest>
+        <attribute
+            name="Main-Class"
+            value="com.kbsriram.cli.CMain"/>
+      </manifest>
+    </jar>
+  </target>
+
+</project>
