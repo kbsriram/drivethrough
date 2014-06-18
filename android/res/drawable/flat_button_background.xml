@@ -4,5 +4,8 @@
       android:state_pressed="true"
       android:drawable="@drawable/flat_button_background_pressed" />
   <item
+      android:state_enabled="false"
+      android:drawable="@drawable/flat_button_background_disabled" />
+  <item
       android:drawable="@drawable/flat_button_background_default" />
 </selector>

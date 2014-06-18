@@ -10,6 +10,8 @@ import android.provider.BaseColumns;
 import android.provider.MediaStore;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.TextView;
 import com.kbsriram.drivethrough.android.R;
 import com.kbsriram.drivethrough.android.event.CStatusEvent;
@@ -30,14 +32,14 @@ public class CStartActivity extends ABaseActivity
     implements CUploadSummaryEvent.Listener,
                CRoundedBitmapView.Loader,
                CBitmapUtils.BitmapLoadedEvent.Listener
-
 {
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-        findViewById(R.id.main_refresh).setOnClickListener
+        final Button refresh = (Button) findViewById(R.id.main_refresh);
+        refresh.setOnClickListener
             (new View.OnClickListener() {
                     public void onClick(View v) {
                         CUploadUtils.asyncCheck(getApplicationContext());
@@ -58,7 +60,20 @@ public class CStartActivity extends ABaseActivity
             (R.id.main_pendings);
         m_pendings_tv = (TextView) m_content.findViewById
             (R.id.main_pendings_title);
-
+        CompoundButton enabled =
+            (CompoundButton) m_content.findViewById(R.id.main_enabled);
+        boolean is_enabled = CUtils.isEnabled(this);
+        enabled.setChecked(is_enabled);
+        refresh.setEnabled(is_enabled);
+        enabled.setOnCheckedChangeListener
+            (new CompoundButton.OnCheckedChangeListener() {
+                    public void onCheckedChanged
+                        (CompoundButton v, boolean checked) {
+                        CUtils.LOGD(TAG, "enabled="+checked);
+                        CUtils.setEnabled(CStartActivity.this, checked);
+                        refresh.setEnabled(checked);
+                    }
+                });
     }
 
     @Override

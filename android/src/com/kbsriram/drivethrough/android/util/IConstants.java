@@ -8,6 +8,7 @@ public interface IConstants
 
     public final static String PREF_DEVICE_PASS = "pref_device_pass";
     public final static String PREF_ONLY_WIFI = "pref_only_wifi";
+    public final static String PREF_ENABLED = "pref_enabled";
     public final static String PREF_SELECTED_ACCOUNT = "pref_selected_account";
 
     public final static String KEY_LAST_RESULT = "last_result";

@@ -12,4 +12,7 @@
   <string name="counter_pending">pending</string>
   <string name="recently_saved">Recently uploaded</string>
   <string name="recently_pending">Queued for upload</string>
+  <string name="upload_disabled">NO</string>
+  <string name="upload_enabled">YES</string>
+  <string name="doupload">Ok to upload?</string>
 </resources>

@@ -75,12 +75,30 @@ public class CUtils
         }
     }
 
+    public static boolean isEnabled(Context ctx)
+    {
+        SharedPreferences pref = PreferenceManager
+            .getDefaultSharedPreferences(ctx);
+        return (pref.getBoolean(IConstants.PREF_ENABLED, true));
+    }
+
+    public static void setEnabled(Context ctx, boolean v)
+    {
+        SharedPreferences pref = PreferenceManager
+            .getDefaultSharedPreferences(ctx);
+        SharedPreferences.Editor editor = pref.edit();
+        editor.putBoolean(IConstants.PREF_ENABLED, v);
+        editor.commit();
+    }
 
     public static boolean isNetworkAvailable(Context ctx)
     {
-        // Check settings first.
+        if (!isEnabled(ctx)) { return false; }
+
         SharedPreferences pref = PreferenceManager
             .getDefaultSharedPreferences(ctx);
+
+        // Check if we want wifi-only
         if (pref.getBoolean(IConstants.PREF_ONLY_WIFI, true)) {
             return isWifiAvailable(ctx);
         }

@@ -79,6 +79,26 @@
             android:id="@+id/main_recents"
             layout="@layout/tnlayout"/>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginTop="@dimen/grid_b_2_3"
+            android:orientation="horizontal">
+
+          <TextView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginRight="@dimen/grid_b_3"
+              android:text="@string/doupload"/>
+          <Switch
+              android:id="@+id/main_enabled"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:textOff="@string/upload_disabled"
+              android:textOn="@string/upload_enabled"/>
+        </LinearLayout>
+
         <Button
             android:id="@+id/main_refresh"
             style="@style/FlatButton"
@@ -89,6 +109,7 @@
             android:layout_marginTop="@dimen/grid_b_3"
             android:paddingLeft="@dimen/grid_b_2_3"
             android:paddingRight="@dimen/grid_b_2_3"/>
+
 
         <TextView
             android:id="@+id/main_content_status"
